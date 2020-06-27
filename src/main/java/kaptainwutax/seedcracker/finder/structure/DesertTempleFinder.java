@@ -47,7 +47,7 @@ public class DesertTempleFinder extends AbstractTempleFinder {
 
     @Override
     protected StructureFeature<?> getStructureFeature() {
-        return Feature.DESERT_PYRAMID;
+        return StructureFeature.DESERT_PYRAMID;
     }
 
     @Override

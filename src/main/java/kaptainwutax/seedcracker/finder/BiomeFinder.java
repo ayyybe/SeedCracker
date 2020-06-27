@@ -52,7 +52,7 @@ public class BiomeFinder extends Finder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.OVERWORLD;
+        return dimension == DimensionType.getOverworldDimensionType();
     }
 
     public static List<Finder> create(World world, ChunkPos chunkPos) {

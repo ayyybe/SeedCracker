@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.StructureFeature;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -80,7 +81,7 @@ public class EndCityFinder extends Finder {
     public List<BlockPos> findInChunk() {
         Biome biome = this.world.getBiome(this.chunkPos.getCenterBlockPos().add(9, 0, 9));
 
-        if(!biome.hasStructureFeature(Feature.END_CITY)) {
+        if(!biome.hasStructureFeature(StructureFeature.END_CITY)) {
             return new ArrayList<>();
         }
 
@@ -118,7 +119,7 @@ public class EndCityFinder extends Finder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.THE_END;
+        return dimension.hasEnderDragonFight();
     }
 
     public static List<Finder> create(World world, ChunkPos chunkPos) {

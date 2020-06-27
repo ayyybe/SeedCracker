@@ -48,7 +48,7 @@ public class SwampHutFinder extends AbstractTempleFinder {
 
     @Override
     protected StructureFeature<?> getStructureFeature() {
-        return Feature.SWAMP_HUT;
+        return StructureFeature.SWAMP_HUT;
     }
 
     @Override

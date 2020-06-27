@@ -37,7 +37,7 @@ public class FinderQueue {
                    List<Finder> finders = type.finderBuilder.build(world, chunkPos);
 
                    finders.forEach(finder -> {
-                       if(finder.isValidDimension(world.dimension.getType())) {
+                       if(finder.isValidDimension(world.getDimension())) {
                            finder.findInChunk();
                            this.finderProfile.addFinder(type, finder);
                        }

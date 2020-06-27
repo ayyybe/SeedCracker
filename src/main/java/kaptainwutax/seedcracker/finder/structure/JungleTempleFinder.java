@@ -47,7 +47,7 @@ public class JungleTempleFinder extends AbstractTempleFinder {
 
     @Override
     protected StructureFeature<?> getStructureFeature() {
-        return Feature.JUNGLE_TEMPLE;
+        return StructureFeature.JUNGLE_PYRAMID;
     }
 
     @Override

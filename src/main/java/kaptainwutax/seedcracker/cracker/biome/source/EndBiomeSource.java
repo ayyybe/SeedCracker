@@ -1,10 +1,9 @@
 package kaptainwutax.seedcracker.cracker.biome.source;
 
-import net.minecraft.class_5217;
+import com.google.common.hash.Hashing;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.biome.source.TheEndBiomeSource;
-import net.minecraft.world.biome.source.TheEndBiomeSourceConfig;
 import net.minecraft.world.biome.source.VoronoiBiomeAccessType;
 
 public class EndBiomeSource extends TheEndBiomeSource implements IFakeBiomeSource {
@@ -13,11 +12,11 @@ public class EndBiomeSource extends TheEndBiomeSource implements IFakeBiomeSourc
 	private final long hashedWorldSeed;
 
 	public EndBiomeSource(long worldSeed) {
-		this(worldSeed, class_5217.method_27418(worldSeed));
+		this(worldSeed,Hashing.sha256().hashLong(worldSeed).asLong());
 	}
 
 	public EndBiomeSource(long worldSeed, long hashedWorldSeed) {
-		super(new TheEndBiomeSourceConfig(worldSeed));
+		super(worldSeed);
 		this.worldSeed = worldSeed;
 		this.hashedWorldSeed = hashedWorldSeed;
 	}

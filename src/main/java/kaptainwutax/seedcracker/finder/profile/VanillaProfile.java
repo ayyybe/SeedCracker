@@ -9,7 +9,7 @@ public class VanillaProfile extends FinderProfile {
 		this.author = "KaptainWutax";
 		this.locked = false;
 
-		this.setTypeState(Finder.Type.DUNGEON, false);
+		//this.setTypeState(Finder.Type.DUNGEON, false);
 	}
 
 }

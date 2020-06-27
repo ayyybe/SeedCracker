@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.StructureFeature;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class ShipwreckFinder extends BlockFinder {
     public List<BlockPos> findInChunk() {
         Biome biome = this.world.getBiome(this.chunkPos.getCenterBlockPos().add(9, 0, 9));
 
-        if(!biome.hasStructureFeature(Feature.SHIPWRECK)) {
+        if(!biome.hasStructureFeature(StructureFeature.SHIPWRECK)) {
             return new ArrayList<>();
         }
 
@@ -192,7 +193,7 @@ public class ShipwreckFinder extends BlockFinder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.OVERWORLD;
+        return dimension == DimensionType.getOverworldDimensionType();
     }
 
     public static List<Finder> create(World world, ChunkPos chunkPos) {

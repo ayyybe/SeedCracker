@@ -95,7 +95,7 @@ public abstract class OreFinder extends BlockFinder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.OVERWORLD;
+        return dimension == DimensionType.getOverworldDimensionType();
     }
 
     /*

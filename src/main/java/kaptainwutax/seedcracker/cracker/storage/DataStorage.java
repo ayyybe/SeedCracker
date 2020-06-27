@@ -6,7 +6,6 @@ import kaptainwutax.seedcracker.cracker.PillarData;
 import kaptainwutax.seedcracker.cracker.biome.GeneratorTypeData;
 import kaptainwutax.seedcracker.cracker.biome.HashedSeedData;
 import kaptainwutax.seedcracker.cracker.structure.StructureData;
-import net.minecraft.world.level.LevelGeneratorType;
 
 import java.util.Comparator;
 import java.util.Set;

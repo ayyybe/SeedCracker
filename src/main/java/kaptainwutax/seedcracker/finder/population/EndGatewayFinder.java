@@ -74,7 +74,7 @@ public class EndGatewayFinder extends BlockFinder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.THE_END;
+        return dimension.hasEnderDragonFight();
     }
 
     public static List<Finder> create(World world, ChunkPos chunkPos) {

@@ -1,23 +1,22 @@
 package kaptainwutax.seedcracker.cracker.biome.source;
 
-import net.minecraft.class_5217;
+import com.google.common.hash.Hashing;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.biome.source.VanillaLayeredBiomeSource;
-import net.minecraft.world.biome.source.VanillaLayeredBiomeSourceConfig;
 import net.minecraft.world.biome.source.VoronoiBiomeAccessType;
-import net.minecraft.world.level.LevelGeneratorType;
+import net.minecraft.client.world.GeneratorType;
 
 public class OverworldBiomeSource extends VanillaLayeredBiomeSource implements IFakeBiomeSource {
 
 	private final long worldSeed;
 	private final long hashedWorldSeed;
-	private final LevelGeneratorType generatorType;
+	private final GeneratorType generatorType;
 
-	public OverworldBiomeSource(long worldSeed, LevelGeneratorType generatorType) {
-		super(new VanillaLayeredBiomeSourceConfig(worldSeed));
+	public OverworldBiomeSource(long worldSeed, GeneratorType generatorType) {
+		super(worldSeed, false, false);
 		this.worldSeed = worldSeed;
-		this.hashedWorldSeed = class_5217.method_27418(worldSeed);
+		this.hashedWorldSeed = Hashing.sha256().hashLong(worldSeed).asLong();
 		this.generatorType = generatorType;
 	}
 
@@ -31,7 +30,7 @@ public class OverworldBiomeSource extends VanillaLayeredBiomeSource implements I
 		return this.hashedWorldSeed;
 	}
 
-	public LevelGeneratorType getGeneratorType() {
+	public GeneratorType getGeneratorType() {
 		return this.generatorType;
 	}
 

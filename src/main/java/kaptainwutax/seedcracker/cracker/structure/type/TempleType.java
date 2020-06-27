@@ -5,7 +5,7 @@ import kaptainwutax.seedcracker.cracker.structure.StructureFeatures;
 public class TempleType extends RegionType {
 
 	public TempleType(int salt) {
-		super(salt, StructureFeatures.CONFIG.getTempleDistance(), StructureFeatures.CONFIG.getTempleSeparation());
+		super(salt, 32, 8);
 	}
 
 }

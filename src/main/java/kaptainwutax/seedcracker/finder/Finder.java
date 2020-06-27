@@ -58,8 +58,8 @@ public abstract class Finder {
     public abstract List<BlockPos> findInChunk();
 
     public boolean shouldRender() {
-        DimensionType finderDim = this.world.dimension.getType();
-        DimensionType playerDim = mc.player.world.dimension.getType();
+        DimensionType finderDim = this.world.getDimension();
+        DimensionType playerDim = mc.player.world.getDimension();
 
         if(finderDim != playerDim)return false;
 
@@ -117,9 +117,9 @@ public abstract class Finder {
 
         END_PILLARS(EndPillarsFinder::create, Category.OTHERS),
         END_GATEWAY(EndGatewayFinder::create, Category.OTHERS),
-        DUNGEON(DungeonFinder::create, Category.OTHERS),
-        EMERALD_ORE(EmeraldOreFinder::create, Category.ORES),
-        DESERT_WELL(DesertWellFinder::create, Category.OTHERS),
+        //DUNGEON(DungeonFinder::create, Category.OTHERS), // needs to be updated for 1.16
+        //EMERALD_ORE(EmeraldOreFinder::create, Category.ORES), // needs to be updated for 1.16
+        //DESERT_WELL(DesertWellFinder::create, Category.OTHERS), // not tested, disabling to be safe
         BIOME(BiomeFinder::create, Category.BIOMES);
 
         public final FinderBuilder finderBuilder;

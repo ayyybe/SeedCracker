@@ -61,7 +61,7 @@ public class DesertWellFinder extends PieceFinder {
 
 	@Override
 	public boolean isValidDimension(DimensionType dimension) {
-		return dimension == DimensionType.OVERWORLD;
+		return dimension == DimensionType.getOverworldDimensionType();
 	}
 
 	protected void buildStructure() {

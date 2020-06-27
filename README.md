@@ -1,3 +1,14 @@
+Forked & patched to work with 1.16.1. This version may not work exactly as intended, but it should suffice until 1.16 is officially supported.
+
+⚠️ The following structures/decorators have been removed as they've changed in some way since 1.15.2 and will throw the cracking:
+- Dungeons (Note that this means it is impossible to find the seed without end pillars in this version)
+- Emerald Ore
+- Desert Well (Actually probably fine but I couldn't find any to test with so I took them out to be safe)
+
+The nether biome finder is not present in this version, you'll have to wait for an official release for that.
+
+---
+
 # SeedCracker [![Github All Releases](https://img.shields.io/github/downloads/KaptainWutax/SeedCracker/total.svg)]()
 
 ## Installation

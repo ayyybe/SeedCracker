@@ -1,26 +1,25 @@
 package kaptainwutax.seedcracker.cracker.biome;
 
 import com.google.common.collect.ImmutableSet;
-import net.minecraft.world.level.LevelGeneratorType;
+import net.minecraft.client.world.GeneratorType;
 
 import java.util.Set;
 
 public class GeneratorTypeData {
 
-	private static final Set<LevelGeneratorType> WHITELIST = ImmutableSet.of(
-			LevelGeneratorType.DEFAULT, LevelGeneratorType.DEFAULT_1_1,
-			LevelGeneratorType.AMPLIFIED, LevelGeneratorType.LARGE_BIOMES
+	private static final Set<GeneratorType> WHITELIST = ImmutableSet.of(
+			GeneratorType.DEFAULT, GeneratorType.AMPLIFIED
 	);
 
-	private final LevelGeneratorType generatorType;
+	private final GeneratorType generatorType;
 	private final boolean isSupported;
 
-	public GeneratorTypeData(LevelGeneratorType generatorType) {
+	public GeneratorTypeData(GeneratorType generatorType) {
 		this.generatorType = generatorType;
 		this.isSupported = isSupported(generatorType);
 	}
 
-	public LevelGeneratorType getGeneratorType() {
+	public GeneratorType getGeneratorType() {
 		return this.generatorType;
 	}
 
@@ -28,7 +27,7 @@ public class GeneratorTypeData {
 		return this.isSupported;
 	}
 
-	public static boolean isSupported(LevelGeneratorType generatorType) {
+	public static boolean isSupported(GeneratorType generatorType) {
 		return WHITELIST.contains(generatorType);
 	}
 

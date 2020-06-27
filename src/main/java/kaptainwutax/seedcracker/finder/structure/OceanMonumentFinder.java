@@ -81,7 +81,7 @@ public class OceanMonumentFinder extends Finder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.OVERWORLD;
+        return dimension == DimensionType.getOverworldDimensionType();
     }
     
     public void buildStructure(PieceFinder finder) {

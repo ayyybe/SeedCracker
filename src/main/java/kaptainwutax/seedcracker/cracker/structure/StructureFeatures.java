@@ -5,12 +5,8 @@ import kaptainwutax.seedutils.lcg.rand.JRand;
 import kaptainwutax.seedutils.mc.MCVersion;
 import kaptainwutax.seedutils.mc.seed.ChunkSeeds;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
 
 public class StructureFeatures {
-
-	public static final ChunkGeneratorConfig CONFIG = new ChunkGeneratorConfig();
-
 	public static final FeatureType<StructureData> DESERT_PYRAMID = new TempleType(14357617);
 
 	public static final FeatureType<StructureData> IGLOO = new TempleType(14357618);
@@ -19,9 +15,9 @@ public class StructureFeatures {
 
 	public static final FeatureType<StructureData> SWAMP_HUT = new TempleType(14357620);
 
-	public static final FeatureType<StructureData> OCEAN_RUIN = new RegionType(14357621, CONFIG.getOceanRuinSpacing(), CONFIG.getOceanRuinSeparation());
+	public static final FeatureType<StructureData> OCEAN_RUIN = new RegionType(14357621, 20, 8);
 
-	public static final FeatureType<StructureData> SHIPWRECK = new RegionType(165745295, CONFIG.getShipwreckSpacing(), CONFIG.getShipwreckSeparation());
+	public static final FeatureType<StructureData> SHIPWRECK = new RegionType(165745295, 24, 4);
 
 	public static final FeatureType<StructureData> PILLAGER_OUTPOST = new TempleType(165745296) {
 		@Override
@@ -45,15 +41,15 @@ public class StructureFeatures {
 
 	public static final FeatureType<StructureData> VILLAGE = new TempleType(10387312);
 
-	public static final FeatureType<StructureData> END_CITY = new TriangularType(10387313, CONFIG.getEndCityDistance(), CONFIG.getEndCitySeparation());
+	public static final FeatureType<StructureData> END_CITY = new TriangularType(10387313, 20, 11);
 
-	public static final FeatureType<StructureData> OCEAN_MONUMENT = new TriangularType(10387313, CONFIG.getOceanMonumentSpacing(), CONFIG.getOceanMonumentSeparation());
+	public static final FeatureType<StructureData> OCEAN_MONUMENT = new TriangularType(10387313, 32, 5);
 
-	public static final FeatureType<StructureData> WOODLAND_MANSION = new TriangularType(10387319, CONFIG.getMansionDistance(), CONFIG.getMansionSeparation());
+	public static final FeatureType<StructureData> WOODLAND_MANSION = new TriangularType(10387319, 80, 20);
 
 	public static final FeatureType<StructureData> BURIED_TREASURE = new RarityType(10387320, 0.01F);
 
-	public static final FeatureType<StructureData> NETHER_FORTRESS = new RegionType(CONFIG.getNetherStructureSeedModifier(), CONFIG.getNetherStructureSpacing(), CONFIG.getNetherStructureSeparation()) {
+	public static final FeatureType<StructureData> NETHER_FORTRESS = new RegionType(30084232, 27, 4) {
 		protected final double bits = Math.log(3) / Math.log(2);
 
 		@Override

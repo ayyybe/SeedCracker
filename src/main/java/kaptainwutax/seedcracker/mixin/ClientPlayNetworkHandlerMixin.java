@@ -14,6 +14,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.world.GeneratorType;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket;
 import net.minecraft.network.packet.s2c.play.CommandTreeS2CPacket;
@@ -56,17 +57,17 @@ public abstract class ClientPlayNetworkHandlerMixin {
 
     @Inject(method = "onGameJoin", at = @At(value = "TAIL"))
     public void onGameJoin(GameJoinS2CPacket packet, CallbackInfo ci) {
-        GeneratorTypeData generatorTypeData = new GeneratorTypeData(packet.getGeneratorType());
+        GeneratorTypeData generatorTypeData = new GeneratorTypeData(GeneratorType.DEFAULT/*packet.getGeneratorType()*/);
 
-        Log.warn("Fetched the generator type [" +
-                I18n.translate(generatorTypeData.getGeneratorType().getStoredName()).toUpperCase() + "].");
+        //Log.warn("Fetched the generator type [" +
+        //        I18n.translate(generatorTypeData.getGeneratorType().getStoredName()).toUpperCase() + "].");
 
         if(!SeedCracker.get().getDataStorage().addGeneratorTypeData(generatorTypeData)) {
             Log.error("THIS GENERATOR IS NOT SUPPORTED!");
             Log.error("Overworld biome search WILL NOT run.");
         }
 
-        HashedSeedData hashedSeedData = new HashedSeedData(packet.getSeed());
+        HashedSeedData hashedSeedData = new HashedSeedData(packet.getSha256Seed());
 
         if(SeedCracker.get().getDataStorage().addHashedSeedData(hashedSeedData)) {
             Log.warn("Fetched hashed world seed [" + hashedSeedData.getHashedSeed() + "].");

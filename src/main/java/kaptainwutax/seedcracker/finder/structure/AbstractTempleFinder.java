@@ -78,6 +78,6 @@ public abstract class AbstractTempleFinder extends Finder {
 
     @Override
     public boolean isValidDimension(DimensionType dimension) {
-        return dimension == DimensionType.OVERWORLD;
+        return dimension == DimensionType.getOverworldDimensionType();
     }
 }
