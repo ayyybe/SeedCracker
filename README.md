@@ -1,9 +1,6 @@
 Forked & patched to work with 1.16.1. This version may not work exactly as intended, but it should suffice until 1.16 is officially supported.
 
-⚠️ The following structures/decorators have been removed as they've changed in some way since 1.15.2 and will throw the cracking:
-- Dungeons (Note that this means it is impossible to find the seed without end pillars in this version)
-- Emerald Ore
-- Desert Well (Actually probably fine but I couldn't find any to test with so I took them out to be safe)
+✅ All features are now supported in this branch. The dungeon and emerald ore finders have been updated and reenabled.
 
 The nether biome finder is not present in this version, you'll have to wait for an official release for that.
 
@@ -22,7 +19,7 @@ The nether biome finder is not present in this version, you'll have to wait for 
   Add a new minecraft instance and press "Install Fabric" in the instance options.
 
 
-  Then download the lastest [release](https://github.com/KaptainWutax/SeedCracker/releases) of SeedCracker and put the `.jar` file    in your mods directory, either `%appdata%/.minecraft/mods/` folder for the vanilla launcher or your own MultiMC instance folder.
+  Then download the lastest [release](https://github.com/ayyybe/SeedCracker/releases) of SeedCracker and put the `.jar` file    in your mods directory, either `%appdata%/.minecraft/mods/` folder for the vanilla launcher or your own MultiMC instance folder.
 
 ## Usage
 
