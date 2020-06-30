@@ -118,7 +118,7 @@ public abstract class Finder {
         END_PILLARS(EndPillarsFinder::create, Category.OTHERS),
         END_GATEWAY(EndGatewayFinder::create, Category.OTHERS),
         DUNGEON(DungeonFinder::create, Category.OTHERS),
-        //EMERALD_ORE(EmeraldOreFinder::create, Category.ORES), // needs to be updated for 1.16
+        EMERALD_ORE(EmeraldOreFinder::create, Category.ORES),
         DESERT_WELL(DesertWellFinder::create, Category.OTHERS),
         BIOME(BiomeFinder::create, Category.BIOMES);
 

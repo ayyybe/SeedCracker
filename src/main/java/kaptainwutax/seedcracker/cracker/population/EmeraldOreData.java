@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class EmeraldOreData extends DecoratorData {
 
     private static final double BITS = Math.log(28 * 16 * 16 * 0.5D) / Math.log(2);
-    public static final int SALT = 40014;
+    public static final int SALT = 60014;
 
     private List<BlockPos> starts;
 
