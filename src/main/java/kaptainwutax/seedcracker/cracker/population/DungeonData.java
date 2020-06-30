@@ -25,7 +25,7 @@ public class DungeonData extends DecoratorData {
     public static final int MOSSY_COBBLESTONE_CALL = 1;
     public static final float MIN_FLOOR_BITS = 26.0F;
     public static final float MAX_FLOOR_BITS = 48.0F;
-    public static final int SALT = 20003;
+    public static final int SALT = 30002;
 
     private BlockPos start;
     private Vec3i size;

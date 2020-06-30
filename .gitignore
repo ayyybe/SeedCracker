@@ -26,3 +26,5 @@ run/
 logs/
 
 src/main/java/kaptainwutax/stronghold/
+
+.DS_Store
